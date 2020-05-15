@@ -29,14 +29,6 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
 
-        // dump($genres);
-
-        // return view('index', [
-        //     'popularMovies' => $popularMovies,
-        //     'genres' => $genres,
-        //     'nowPlayingMovies' => $nowPlayingMovies,
-        // ]);
-
         $viewModel = new MoviesViewModel(
             $popularMovies,
             $nowPlayingMovies,
